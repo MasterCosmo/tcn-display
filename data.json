@@ -8,6 +8,14 @@
       "subtitle": "Completed the 14-Foot Warped Wall"
     },
     {
+      "id": "_apfbahz",
+      "type": "ad",
+      "tag": "Community Partner",
+      "businessName": "Uncle Ray's Ice Cream",
+      "message": "Work hard, soft serve! go get your treat after sweating it out here",
+      "cta": "Mention TCN for a special offer"
+    },
+    {
       "id": "_9e4z00t",
       "type": "news",
       "eyebrow": "Gym Update",
@@ -136,7 +144,7 @@
     }
   ],
   "settings": {
-    "duration": 9000,
+    "duration": 5000,
     "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
     "tickerItems": [
       "📣 Founding member pricing ends May 1st — lock in your rate today",
