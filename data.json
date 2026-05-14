@@ -1,0 +1,151 @@
+{
+  "slides": [
+    {
+      "id": "_tcmuxpe",
+      "type": "achievement",
+      "tag": "Wall of Fame",
+      "title": "Payton McNulty",
+      "subtitle": "Completed the 14-Foot Warped Wall"
+    },
+    {
+      "id": "_9e4z00t",
+      "type": "news",
+      "eyebrow": "Gym Update",
+      "headline": "NEW\nOBSTACLES\nTHIS WEEK",
+      "accentWord": "OBSTACLES",
+      "body": "Two new obstacles installed and ready for training!",
+      "chip": "Starting Monday · Ask a Coach"
+    },
+    {
+      "id": "_or8xsfn",
+      "type": "ad",
+      "tag": "Community Partner",
+      "businessName": "Fenton Family Orthodontics",
+      "message": "Proudly supporting Tri County Ninja families",
+      "cta": "Mention TCN for 10% off your first visit"
+    },
+    {
+      "id": "_ef26fvy",
+      "type": "record",
+      "eyebrow": "⏱ Gym Records",
+      "title": "Course Records",
+      "records": [
+        {
+          "obstacle": "14-Ft Warped Wall",
+          "holder": "E. McNulty",
+          "time": ":04.2"
+        },
+        {
+          "obstacle": "Salmon Ladder",
+          "holder": "T. Kowalski",
+          "time": ":11.8"
+        },
+        {
+          "obstacle": "Full Course",
+          "holder": "P. McNulty",
+          "time": "1:32.4"
+        }
+      ]
+    },
+    {
+      "id": "_om691fy",
+      "type": "news",
+      "eyebrow": "Upcoming Event",
+      "headline": "SPRING\nCHALLENGE\nSERIES",
+      "accentWord": "CHALLENGE",
+      "body": "Open to all skill levels. UNAA-sanctioned qualifier.",
+      "chip": "May 17th · Sign Up at Front Desk"
+    }
+  ],
+  "schedule": [
+    {
+      "time": "9:00",
+      "ampm": "AM",
+      "name": "Open Ninja — All Ages",
+      "status": "open",
+      "statusText": "8 spots open"
+    },
+    {
+      "time": "4:30",
+      "ampm": "PM",
+      "name": "Little Ninjas (Ages 4–6)",
+      "status": "low",
+      "statusText": "3 spots left"
+    },
+    {
+      "time": "5:30",
+      "ampm": "PM",
+      "name": "Ninjas Level 1–3",
+      "status": "open",
+      "statusText": "8 open"
+    },
+    {
+      "time": "6:30",
+      "ampm": "PM",
+      "name": "Advanced + Adult",
+      "status": "full",
+      "statusText": "Full · Waitlist available"
+    }
+  ],
+  "events": [
+    {
+      "month": "Apr",
+      "day": "26",
+      "name": "Parent Observation Night",
+      "type": "Community",
+      "highlight": false
+    },
+    {
+      "month": "May",
+      "day": "3",
+      "name": "Birthday Party — Gavin S.",
+      "type": "Private Event",
+      "highlight": false
+    },
+    {
+      "month": "May",
+      "day": "10",
+      "name": "UNAA Qualifier Prep Camp",
+      "type": "Competition Team",
+      "highlight": false
+    },
+    {
+      "month": "May",
+      "day": "17",
+      "name": "Spring Challenge Series",
+      "type": "UNAA Sanctioned · All Ages",
+      "highlight": true
+    }
+  ],
+  "bannerAds": [
+    {
+      "biz": "Livingston PT & Sports",
+      "tagline": "Performance recovery for young athletes"
+    },
+    {
+      "biz": "Fenton Family Orthodontics",
+      "tagline": "Mention us for 10% off — proud TCN partner"
+    },
+    {
+      "biz": "Brighton Pizza Co.",
+      "tagline": "Fuel up after practice · mention Tri County Ninja"
+    },
+    {
+      "biz": "Hartland Tutoring Center",
+      "tagline": "Building smart athletes — free first session"
+    }
+  ],
+  "settings": {
+    "duration": 9000,
+    "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
+    "tickerItems": [
+      "📣 Founding member pricing ends May 1st — lock in your rate today",
+      "🏆 Congrats to Payton McNulty — 14-foot wall conquered!",
+      "📅 Parent Observation Night — April 26th · all families welcome",
+      "🎂 Birthday parties available — call 810-354-8352 or ask at the desk",
+      "⚡ Memberships starting at $60/mo — first class just $10",
+      "🥇 Spring Challenge Series May 17th — UNAA sanctioned · sign up now",
+      "📞 tricountyninja.com · 810-354-8352"
+    ]
+  }
+}
