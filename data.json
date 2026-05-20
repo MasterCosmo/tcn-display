@@ -25,44 +25,44 @@
       "chip": "Starting Monday · Ask a Coach"
     },
     {
-      "id": "_or8xsfn",
-      "type": "ad",
-      "tag": "Community Partner",
-      "businessName": "Fenton Family Orthodontics",
-      "message": "Proudly supporting Tri County Ninja families",
-      "cta": "Mention TCN for 10% off your first visit"
-    },
-    {
       "id": "_ef26fvy",
       "type": "record",
       "eyebrow": "⏱ Gym Records",
       "title": "Course Records",
       "records": [
         {
-          "obstacle": "14-Ft Warped Wall",
-          "holder": "E. McNulty",
-          "time": ":04.2"
+          "obstacle": "Speed Course Record",
+          "holder": "Ellie Archer",
+          "time": "0:29.30"
         },
         {
           "obstacle": "Salmon Ladder",
-          "holder": "T. Kowalski",
-          "time": ":11.8"
+          "holder": "Mike Archer",
+          "time": "6 rungs"
         },
         {
           "obstacle": "Full Course",
-          "holder": "P. McNulty",
-          "time": "1:32.4"
+          "holder": "Zoey Balogh",
+          "time": "3:45"
         }
       ]
+    },
+    {
+      "id": "_or8xsfn",
+      "type": "ad",
+      "tag": "Community Partner",
+      "businessName": "Fenton Family Orthodontics",
+      "message": "Proudly supporting Tri County Ninja families",
+      "cta": "Mention TCN for a special prize"
     },
     {
       "id": "_om691fy",
       "type": "news",
       "eyebrow": "Upcoming Event",
-      "headline": "SPRING\nCHALLENGE\nSERIES",
-      "accentWord": "CHALLENGE",
-      "body": "Open to all skill levels. UNAA-sanctioned qualifier.",
-      "chip": "May 17th · Sign Up at Front Desk"
+      "headline": "FINA\nNINJA vs NINJA \n",
+      "accentWord": "NINJA vs NINJA",
+      "body": "Open to all skill levels. FINA-sanctioned qualifier",
+      "chip": "May 25th · Sign Up at Front Desk"
     }
   ],
   "schedule": [
@@ -144,7 +144,7 @@
     }
   ],
   "settings": {
-    "duration": 5000,
+    "duration": 9000,
     "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
     "tickerItems": [
       "📣 Founding member pricing ends May 1st — lock in your rate today",
