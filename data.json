@@ -1,19 +1,19 @@
 {
   "slides": [
     {
-      "id": "_tcmuxpe",
-      "type": "achievement",
-      "tag": "Wall of Fame",
-      "title": "Emmy Archer",
-      "subtitle": "Finalist at NSC 2026!"
-    },
-    {
       "id": "_apfbahz",
       "type": "ad",
       "tag": "Community Partner",
       "businessName": "Uncle Ray's Ice Cream",
       "message": "Work hard, soft serve! go get your treat after sweating it out here",
       "cta": "Mention TCN for a special offer"
+    },
+    {
+      "id": "_tcmuxpe",
+      "type": "achievement",
+      "tag": "Wall of Fame",
+      "title": "Emmy Archer",
+      "subtitle": "Finalist at NSC 2026!"
     },
     {
       "id": "_9e4z00t",
