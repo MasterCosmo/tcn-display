@@ -95,6 +95,14 @@
       "accentWord": "HEADLINE",
       "body": "Enter your message here.",
       "chip": "Date or detail here"
+    },
+    {
+      "id": "_mpuwg9q",
+      "type": "ad",
+      "tag": "Community Partner",
+      "businessName": "new business",
+      "message": "Your message to TCN families",
+      "cta": "Mention TCN for a special offer"
     }
   ],
   "schedule": [
