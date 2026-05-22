@@ -49,19 +49,19 @@
       ]
     },
     {
-      "id": "_om691fy",
+      "id": "_8959nkb",
       "type": "news",
-      "eyebrow": "Upcoming Event",
-      "headline": "FINA\nNINJA vs NINJA \n",
-      "accentWord": "NINJA vs NINJA",
-      "body": "Open to all skill levels. FINA-sanctioned qualifier",
-      "chip": "May 25th · Sign Up at Front Desk"
+      "eyebrow": "testing a new slide",
+      "headline": "SLIDE\nHEADLINE",
+      "accentWord": "HEADLINE",
+      "body": "Enter your message here.",
+      "chip": "Date or detail here"
     },
     {
-      "id": "_1y2kvb3",
+      "id": "_duefkip",
       "type": "news",
-      "eyebrow": "testing layout",
-      "headline": "TEST\nHEADLINE",
+      "eyebrow": "and another slide",
+      "headline": "SLIDE\nHEADLINE",
       "accentWord": "HEADLINE",
       "body": "Enter your message here.",
       "chip": "Date or detail here"
