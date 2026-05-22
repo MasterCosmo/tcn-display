@@ -45,23 +45,53 @@
           "obstacle": "Full Course",
           "holder": "Zoey Balogh",
           "time": "3:45"
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
+        },
+        {
+          "obstacle": "",
+          "holder": "",
+          "time": ""
         }
       ]
     },
     {
-      "id": "_om691fy",
+      "id": "_h9apgn3",
       "type": "news",
-      "eyebrow": "Upcoming Event",
-      "headline": "FINA\nNINJA vs NINJA \n",
-      "accentWord": "NINJA vs NINJA",
-      "body": "Open to all skill levels. FINA-sanctioned qualifier",
-      "chip": "May 25th · Sign Up at Front Desk"
+      "eyebrow": "Gym Update",
+      "headline": "Test 1\nHEADLINE",
+      "accentWord": "HEADLINE",
+      "body": "Enter your message here.",
+      "chip": "Date or detail here"
     },
     {
-      "id": "_1y2kvb3",
+      "id": "_164t2i0",
       "type": "news",
-      "eyebrow": "testing layout",
-      "headline": "TEST\nHEADLINE",
+      "eyebrow": "Gym Update",
+      "headline": "Test 2\nHEADLINE",
       "accentWord": "HEADLINE",
       "body": "Enter your message here.",
       "chip": "Date or detail here"
