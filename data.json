@@ -118,6 +118,15 @@
           "time": ""
         }
       ]
+    },
+    {
+      "id": "_oft5i07",
+      "type": "news",
+      "eyebrow": "another news",
+      "headline": "SLIDE to test a theory\nHEADLINE",
+      "accentWord": "HEADLINE",
+      "body": "Enter your message here.",
+      "chip": "Date or detail here"
     }
   ],
   "schedule": [
