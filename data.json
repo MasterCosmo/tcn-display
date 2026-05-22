@@ -56,6 +56,68 @@
       "accentWord": "NINJA vs NINJA",
       "body": "Open to all skill levels. FINA-sanctioned qualifier",
       "chip": "May 25th · Sign Up at Front Desk"
+    },
+    {
+      "id": "_ujv4tjd",
+      "type": "news",
+      "eyebrow": "Testing the new format",
+      "headline": "IS THIS\nSLIDE CENTERED",
+      "accentWord": "SLIDE CENTERED",
+      "body": "I HOPE SO",
+      "chip": "JUNE 5TH"
+    },
+    {
+      "id": "_ss5shdj",
+      "type": "achievement",
+      "tag": "HE DID IT!",
+      "title": "TIM BALOGH",
+      "subtitle": "Got off his couch and exercised"
+    },
+    {
+      "id": "_jzvx781",
+      "type": "ad",
+      "tag": "Community Partner",
+      "businessName": "Business Name",
+      "message": "Your message to TCN families",
+      "cta": "Mention TCN for a special offer"
+    },
+    {
+      "id": "_f0mia18",
+      "type": "record",
+      "eyebrow": "⏱ Gym Records",
+      "title": "Course Records",
+      "records": [
+        {
+          "obstacle": "Obstacle 1",
+          "holder": "Name",
+          "time": ":00.0"
+        },
+        {
+          "obstacle": "Obstacle 2",
+          "holder": "tim",
+          "time": "asdf"
+        },
+        {
+          "obstacle": "Obstacle 3",
+          "holder": "asdf",
+          "time": "fffdsafsfdfa"
+        },
+        {
+          "obstacle": "Obstacle 4",
+          "holder": "qwer",
+          "time": ""
+        },
+        {
+          "obstacle": "Obstacle 5",
+          "holder": "fghj",
+          "time": ""
+        },
+        {
+          "obstacle": "Obstacle 6",
+          "holder": "xcvb",
+          "time": ""
+        }
+      ]
     }
   ],
   "schedule": [
