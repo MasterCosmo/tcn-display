@@ -78,7 +78,7 @@
       "statusText": "",
       "days": [
         "tue",
-        "fri"
+        "thu"
       ],
       "endTime": "4:00",
       "endAmpm": "PM"
@@ -91,7 +91,7 @@
       "statusText": "Spots available",
       "days": [
         "tue",
-        "fri"
+        "thu"
       ],
       "endTime": "5:30",
       "endAmpm": "PM"
@@ -104,7 +104,7 @@
       "statusText": "Spots available",
       "days": [
         "tue",
-        "fri"
+        "thu"
       ],
       "endTime": "8:00",
       "endAmpm": "PM"
