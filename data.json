@@ -77,7 +77,9 @@
       "status": "open",
       "statusText": "",
       "days": [
-        "tue"
+        "tue",
+        "wed",
+        "fri"
       ],
       "endTime": "4:00",
       "endAmpm": "PM"
@@ -89,7 +91,10 @@
       "status": "low",
       "statusText": "Spots available",
       "days": [
-        "tue"
+        "tue",
+        "wed",
+        "thu",
+        "fri"
       ],
       "endTime": "5:30",
       "endAmpm": "PM"
@@ -107,32 +112,7 @@
       "endAmpm": "PM"
     },
     {
-      "time": "12",
-      "ampm": "PM",
-      "name": "Open Ninja — All Ages",
-      "status": "open",
-      "statusText": "",
-      "days": [
-        "wed",
-        "thu"
-      ],
-      "endTime": "4"
-    },
-    {
-      "time": "4:3",
-      "ampm": "PM",
-      "name": "Class",
-      "status": "open",
-      "statusText": "Spots available",
-      "days": [
-        "wed",
-        "thu"
-      ],
-      "endTime": "5:3",
-      "endAmpm": "PM"
-    },
-    {
-      "time": "5:3",
+      "time": "5:30",
       "ampm": "PM",
       "name": "Class",
       "status": "full",
@@ -141,11 +121,11 @@
         "wed",
         "thu"
       ],
-      "endTime": "6:3",
+      "endTime": "6:30",
       "endAmpm": "PM"
     },
     {
-      "time": "6:3",
+      "time": "6:30",
       "ampm": "PM",
       "name": "Class",
       "status": "low",
@@ -154,7 +134,20 @@
         "wed",
         "thu"
       ],
-      "endTime": "7:3",
+      "endTime": "7:30",
+      "endAmpm": "PM"
+    },
+    {
+      "time": "7:30",
+      "ampm": "PM",
+      "name": "Open Ninja — All Ages",
+      "status": "open",
+      "statusText": "",
+      "days": [
+        "wed",
+        "thu"
+      ],
+      "endTime": "8:30",
       "endAmpm": "PM"
     }
   ],
