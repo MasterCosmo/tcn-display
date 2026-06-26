@@ -113,7 +113,8 @@
       "status": "open",
       "statusText": "",
       "days": [
-        "wed"
+        "wed",
+        "thu"
       ],
       "endTime": "4"
     },
@@ -124,7 +125,8 @@
       "status": "open",
       "statusText": "Spots available",
       "days": [
-        "wed"
+        "wed",
+        "thu"
       ],
       "endTime": "5:3",
       "endAmpm": "PM"
@@ -136,7 +138,8 @@
       "status": "full",
       "statusText": "Spots available",
       "days": [
-        "wed"
+        "wed",
+        "thu"
       ],
       "endTime": "6:3",
       "endAmpm": "PM"
@@ -148,7 +151,8 @@
       "status": "low",
       "statusText": "Spots available",
       "days": [
-        "wed"
+        "wed",
+        "thu"
       ],
       "endTime": "7:3",
       "endAmpm": "PM"
