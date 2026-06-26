@@ -59,40 +59,63 @@
   ],
   "schedule": [
     {
-      "time": "9:00",
-      "ampm": "AM",
+      "time": "12:00",
+      "ampm": "PM",
       "name": "Open Ninja — All Ages",
       "status": "open",
-      "statusText": "8 spots open"
+      "statusText": "",
+      "endTime": "8:30",
+      "endAmpm": "PM",
+      "days": [
+        "mon"
+      ]
+    },
+    {
+      "time": "12:00",
+      "ampm": "PM",
+      "name": "Open Ninja — All Ages",
+      "status": "open",
+      "statusText": "",
+      "days": [
+        "tue"
+      ],
+      "endTime": "4:00",
+      "endAmpm": "PM"
     },
     {
       "time": "4:30",
       "ampm": "PM",
-      "name": "Little Ninjas (Ages 4–6)",
+      "name": "Class",
       "status": "low",
-      "statusText": "3 spots left"
+      "statusText": "Spots available",
+      "days": [
+        "tue"
+      ],
+      "endTime": "5:30",
+      "endAmpm": "PM"
     },
     {
       "time": "5:30",
       "ampm": "PM",
-      "name": "Ninjas Level 1–3",
-      "status": "open",
-      "statusText": "8 open"
-    },
-    {
-      "time": "6:30",
-      "ampm": "PM",
-      "name": "Advanced + Adult",
-      "status": "full",
-      "statusText": "Full · Waitlist available"
-    },
-    {
-      "time": "",
-      "ampm": "PM",
-      "name": "New Class",
+      "name": "Comp Team",
       "status": "open",
       "statusText": "Spots available",
-      "days": []
+      "days": [
+        "tue"
+      ],
+      "endTime": "8:00",
+      "endAmpm": "PM"
+    },
+    {
+      "time": "12",
+      "ampm": "PM",
+      "name": "Open Ninja — All Ages",
+      "status": "open",
+      "statusText": "",
+      "days": [
+        "wed"
+      ],
+      "endTime": "4"
     },
     {
       "time": "",
@@ -101,20 +124,7 @@
       "status": "open",
       "statusText": "Spots available",
       "days": [
-        "wed",
-        "fri"
-      ]
-    },
-    {
-      "time": "",
-      "ampm": "PM",
-      "name": "New Class",
-      "status": "open",
-      "statusText": "Spots available",
-      "days": [
-        "mon",
-        "wed",
-        "fri"
+        "wed"
       ]
     }
   ],
