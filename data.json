@@ -3,9 +3,10 @@
     {
       "id": "_5hg1g55",
       "type": "achievement",
-      "tag": "Wall of Fame",
-      "title": "Payton McNulty",
-      "subtitle": "Completed the 14-Foot Warped Wall"
+      "tag": "Congratulations",
+      "title": "Emmy Archer",
+      "subtitle": "Competing in the NSC Finals!",
+      "cta": ""
     },
     {
       "id": "_m182xq4",
@@ -51,10 +52,10 @@
       "id": "_7l1nfwd",
       "type": "news",
       "eyebrow": "Upcoming Event",
-      "headline": "SPRING\nCHALLENGE\nSERIES",
-      "accentWord": "CHALLENGE",
-      "body": "Open to all skill levels. UNAA-sanctioned qualifier.",
-      "chip": "May 17th · Sign Up at Front Desk"
+      "headline": "SUMMER CAMP\nJULY 6th-9th | AUGUST 3rd-6th",
+      "accentWord": "JULY 6th-9th | AUGUST 3rd-6th",
+      "body": "Ages 5-12, Monday - Thursday",
+      "chip": "$40/day or $150/week"
     }
   ],
   "schedule": [
