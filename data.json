@@ -85,6 +85,37 @@
       "name": "Advanced + Adult",
       "status": "full",
       "statusText": "Full · Waitlist available"
+    },
+    {
+      "time": "",
+      "ampm": "PM",
+      "name": "New Class",
+      "status": "open",
+      "statusText": "Spots available",
+      "days": []
+    },
+    {
+      "time": "",
+      "ampm": "PM",
+      "name": "New Class",
+      "status": "open",
+      "statusText": "Spots available",
+      "days": [
+        "wed",
+        "fri"
+      ]
+    },
+    {
+      "time": "",
+      "ampm": "PM",
+      "name": "New Class",
+      "status": "open",
+      "statusText": "Spots available",
+      "days": [
+        "mon",
+        "wed",
+        "fri"
+      ]
     }
   ],
   "events": [
