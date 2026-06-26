@@ -89,32 +89,18 @@
   ],
   "events": [
     {
-      "month": "Apr",
-      "day": "26",
-      "name": "Parent Observation Night",
-      "type": "Community",
+      "month": "Jul",
+      "day": "6-9",
+      "name": "Summer Camp",
+      "type": "Ages 5-12 | $40/day or $150/week",
       "highlight": false
     },
     {
-      "month": "May",
-      "day": "3",
-      "name": "Birthday Party — Gavin S.",
-      "type": "Private Event",
+      "month": "Aug",
+      "day": "3-6",
+      "name": "Summer Camp",
+      "type": "Ages 5-12 | $40/day or $150/week",
       "highlight": false
-    },
-    {
-      "month": "May",
-      "day": "10",
-      "name": "UNAA Qualifier Prep Camp",
-      "type": "Competition Team",
-      "highlight": false
-    },
-    {
-      "month": "May",
-      "day": "17",
-      "name": "Spring Challenge Series",
-      "type": "UNAA Sanctioned · All Ages",
-      "highlight": true
     }
   ],
   "bannerAds": [
@@ -137,7 +123,7 @@
   ],
   "settings": {
     "duration": 9000,
-    "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
+    "location": "14283 Fenton Rd · Fenton MI 48430 · 810-354-8352",
     "tickerItems": [
       "📣 Founding member pricing ends May 1st — lock in your rate today",
       "🏆 Congrats to Payton McNulty — 14-foot wall conquered!",
