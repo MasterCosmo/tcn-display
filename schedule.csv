@@ -9,4 +9,4 @@ time,ampm,endTime,endAmpm,name,status,statusText,days
 5:30,PM,8:00,PM,Comp Team,open,Spots available,tue
 5:30,PM,6:30,PM,Class,full,Spots available,wed|thu
 6:30,PM,7:30,PM,Class,low,Spots available,wed|thu
-12:00,PM,1:30,PM,Jordan's Birthday Party,,,sat
+12:00,PM,1:30,PM,Jordan's Birthday Party,,,fri
