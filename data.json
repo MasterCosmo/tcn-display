@@ -47,13 +47,6 @@
           "time": "42"
         }
       ]
-    },
-    {
-      "id": "_w374ux2",
-      "type": "facebook",
-      "url": "https://www.facebook.com/reel/887266270606673",
-      "label": "Go Emmy go!",
-      "customDuration": 60
     }
   ],
   "events": [
@@ -98,7 +91,7 @@
     }
   ],
   "settings": {
-    "duration": 5000,
+    "duration": 10000,
     "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
     "tickerItems": [
       "📣 Founding member pricing ends September 1st — lock in your rate today",
