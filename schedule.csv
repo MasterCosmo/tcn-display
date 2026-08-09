@@ -1,5 +1,5 @@
 time,ampm,endTime,endAmpm,name,status,statusText,days
-12:00,PM,8:30,PM,Open Ninja — All Ages,open,,mon
+12:00,PM,8:30,PM,Open Ninja — All Ages,open,,mon|sun
 12:00,PM,4:00,PM,Open Ninja — All Ages,open,,tue|wed
 2:00,PM,4:00,PM,Open Ninja — All Ages,open,,thu
 7:30,PM,8:30,PM,Open Ninja — All Ages,open,,wed|thu
