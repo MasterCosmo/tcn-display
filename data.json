@@ -51,24 +51,17 @@
   ],
   "events": [
     {
-      "month": "Sep",
-      "day": "26",
-      "name": "Parent Observation Night",
-      "type": "Community",
-      "highlight": false
-    },
-    {
       "month": "Oct",
       "day": "3",
-      "name": "Birthday Party — Gavin S.",
-      "type": "Private Event",
+      "name": "UNAA + State Games",
+      "type": "Registration now open!",
       "highlight": false
     },
     {
       "month": "Nov",
-      "day": "10",
-      "name": "UNAA Qualifier Prep Camp",
-      "type": "Competition Team",
+      "day": "14",
+      "name": "FINA",
+      "type": "Speed + Endurance",
       "highlight": false
     }
   ],
