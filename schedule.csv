@@ -5,8 +5,9 @@ time,ampm,endTime,endAmpm,name,status,statusText,days
 7:30,PM,8:30,PM,Open Ninja — All Ages,open,,wed|thu
 5:30,PM,8:30,PM,Open Ninja — All Ages,open,,fri
 11:00,AM,4:30,PM,Open Ninja — All Ages,open,,fri
-4:30,PM,5:30,PM,Class,low,Spots available,tue|wed|thu|fri
-5:30,PM,8:00,PM,Comp Team,open,Spots available,tue
-5:30,PM,6:30,PM,Class,full,Spots available,wed|thu
-6:30,PM,7:30,PM,Class,low,Spots available,wed|thu
+4:30,PM,5:30,PM,Class,low,Spots available,fri
+5:00,PM,6:00,PM,Class,low,Spots available,tue|wed|thu
+6:00,PM,8:00,PM,Comp Team,open,Spots available,tue
+6:00,PM,7:00,PM,Class,full,Spots available,wed|thu
+7:00,PM,8:00,PM,Class,low,Spots available,wed|thu
 12:00,PM,1:30,PM,Jordan's Birthday Party,,,sun
