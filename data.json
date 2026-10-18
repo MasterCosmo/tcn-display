@@ -71,33 +71,25 @@
   ],
   "bannerAds": [
     {
-      "biz": "Livingston PT & Sports",
-      "tagline": "Performance recovery for young athletes"
+      "biz": "Want a Tri County Ninja T-Shirt?",
+      "tagline": "Let your coach know to find out more."
     },
     {
-      "biz": "Fenton Family Orthodontics",
-      "tagline": "Mention us for 10% off — proud TCN partner"
-    },
-    {
-      "biz": "Brighton Pizza Co.",
-      "tagline": "Fuel up after practice · mention Tri County Ninja"
-    },
-    {
-      "biz": "Hartland Tutoring Center",
-      "tagline": "Building smart athletes — free first session"
+      "biz": "Join us for Open Gym!",
+      "tagline": "Friday @ 5:30"
     }
   ],
   "settings": {
-    "duration": 5000,
+    "duration": 10000,
     "location": "14283 N Fenton Rd · Fenton MI 48430 · 810-354-8352",
     "tickerItems": [
       "📣 Founding member pricing ends September 1st — lock in your rate today",
       "🏆 Congrats to Emmy Archer — 6th Place in FINA World Championship!",
-      "📅 Friendly Competition — October 26th · all members welcome",
+      "📅 FINA Competition — November 14th · all members welcome",
       "🎂 Birthday parties available — call 810-354-8352 or ask at the desk",
       "⚡ Memberships starting at $100/mo — first class just $20",
       "📞 tricountyninja.com · 810-354-8352"
     ],
-    "headerMsg": "Welcome to Tri County Ninja! QR code added"
+    "headerMsg": "Welcome to Tri County Ninja!"
   }
 }
