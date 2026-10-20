@@ -1333,7 +1333,7 @@ loadSched();setInterval(loadSched,300000);
 var tr=document.getElementById("tickerTrack");
 if(!T||!T.length)return;
 var items=T.concat(T.concat(T));
-items.forEach(function(t){var s=document.createElement("span");s.className="ticker-item";s.textContent=t.replace(/[^ -À-ɏ]/g," ").replace(/s+/g," ").trim();tr.appendChild(s);});
+items.forEach(function(t){var s=document.createElement("span");s.className="ticker-item";s.textContent=t.replace(/[^ -~]/g,"").trim();tr.appendChild(s);});
 var pos=0,speed=0.6,totalW=0;
 function getW(){totalW=0;var ch=tr.children;for(var i=0;i<ch.length/3;i++){totalW+=ch[i].offsetWidth;} return totalW;}
 requestAnimationFrame(function measure(){totalW=getW();if(totalW<1){requestAnimationFrame(measure);return;}
