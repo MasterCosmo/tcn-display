@@ -41,17 +41,17 @@
   "events": [
     {
       "month": "Nov",
-      "day": "14",
-      "name": "FINA - Season 8 Qualifier",
-      "type": "Speed + Endurance",
-      "highlight": true
-    },
-    {
-      "month": "Nov",
       "day": "13",
       "name": "Gym Closed",
       "type": "No open gym due to competition preparation",
       "highlight": false
+    },
+    {
+      "month": "Nov",
+      "day": "14",
+      "name": "FINA - Season 8 Qualifier",
+      "type": "Speed + Endurance",
+      "highlight": true
     }
   ],
   "bannerAds": [
