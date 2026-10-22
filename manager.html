@@ -331,7 +331,7 @@ function buildDisplayForPublish(payload, css, logoSrc) {
 
 // ───────────────────────── state ─────────────────────────
 var slides = [], events = [], bannerAds = [], settings = {duration:9000, location:'', tickerItems:[], headerMsg:''};
-var dirty = false, loaded = false, publishing = false, openId = null;
+var dirty = false, loaded = false, publishing = false, openId = null, liveSha = null;
 
 function uid(){ return '_' + Math.random().toString(36).slice(2,9); }
 function $(s, r){ return (r||document).querySelector(s); }
@@ -393,6 +393,7 @@ async function loadFromGitHub(){
     if (r.status === 401 || r.status === 403){ try { localStorage.removeItem('tcn_m_token'); } catch(e){} showTokenPrompt('GitHub rejected the token (' + r.status + '). Paste a new one with read/write access to ' + GH_REPO + '.'); return; }
     if (!r.ok) throw new Error('Could not load data.json (' + r.status + ').');
     var d = JSON.parse(await r.text());
+    liveSha = await getSha();
     slides = (d.slides || []).map(function(s){ if (!s.id) s.id = uid(); return s; });
     events = d.events || []; bannerAds = d.bannerAds || [];
     var st = d.settings || {};
@@ -421,6 +422,12 @@ function showTokenPrompt(msg){
     }})));
 }
 
+async function getSha(){
+  var r = await fetch(api('data.json') + '?t=' + Date.now(), {headers: ghHeaders({'Accept':'application/vnd.github+json'}), cache:'no-store'});
+  if (r.status === 404) return 'none';
+  if (!r.ok) throw new Error('GitHub ' + r.status);
+  return (await r.json()).sha;
+}
 async function upsert(path, content, message){
   var url = api(path);
   var bytes = new TextEncoder().encode(content), bin = '';
@@ -432,7 +439,7 @@ async function upsert(path, content, message){
     if (c.ok){ sha = (await c.json()).sha; }
     var body = {message: message, content: b64}; if (sha) body.sha = sha;
     var r = await fetch(url, {method:'PUT', headers: ghHeaders({'Accept':'application/vnd.github+json','Content-Type':'application/json'}), body: JSON.stringify(body)});
-    if (r.ok) return;
+    if (r.ok){ try { return (await r.json()).content.sha; } catch(x){ return null; } }
     if (r.status === 409 && attempt === 0) continue; // stale sha, retry once
     var e = {}; try { e = await r.json(); } catch(x){}
     throw new Error((e.message || ('HTTP ' + r.status)) + ' (' + path + ')');
@@ -442,13 +449,20 @@ async function upsert(path, content, message){
 async function publish(){
   if (!loaded || publishing) return;
   if (!slides.length){ var ok = await confirmSheet('Publish with no slides?', 'The TV display will have nothing to show.', 'Publish anyway'); if (!ok) return; }
+  try {
+    var cur = await getSha();
+    if (cur !== 'none' && cur !== liveSha){
+      var go = await confirmSheet('Live display changed', 'It was updated (probably from your computer) after you loaded it here. Publishing now will overwrite those changes.', 'Publish anyway');
+      if (!go) return;
+    }
+  } catch(e){ /* check failed: continue */ }
   publishing = true; updatePub();
   var b = $('#btnPub'); var old = b.firstChild.textContent; b.firstChild.textContent = 'Publishing…';
   try {
     var payload = {slides: slides, events: events, bannerAds: bannerAds, settings: settings};
     var html = buildDisplayForPublish(payload, atob(DISPLAY_CSS_B64), 'data:image/png;base64,' + LOGO_B64);
     await upsert('index.html', html, 'Update TCN display (mobile)');
-    await upsert('data.json', JSON.stringify(payload, null, 2), 'Update display data (mobile)');
+    liveSha = await upsert('data.json', JSON.stringify(payload, null, 2), 'Update display data (mobile)');
     dirty = false;
     toast('Published! Live in ~1 min', 'ok');
   } catch(e){
