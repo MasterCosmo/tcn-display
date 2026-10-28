@@ -52,6 +52,13 @@
       "name": "FINA - Season 8 Qualifier",
       "type": "Speed + Endurance",
       "highlight": true
+    },
+    {
+      "month": "Oct",
+      "day": "21",
+      "name": "Test",
+      "type": "testing old date",
+      "highlight": false
     }
   ],
   "bannerAds": [
