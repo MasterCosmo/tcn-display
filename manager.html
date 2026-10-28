@@ -254,7 +254,7 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     return '';
   }
 
-  function evtHp()   { return ev.map(e => { const hl = e.highlight ? 'style="background:var(--navy-mid);border:1px solid var(--orange);"' : ''; return '<div class="event-item"><div class="event-date-block" ' + hl + '><div class="event-month">' + e.month + '</div><div class="event-day">' + e.day + '</div></div><div><div class="event-name">' + e.name + '</div><div class="event-type">' + e.type + '</div></div></div>'; }).join(''); }
+  function evtHp()   { return ev.map(e => { const hl = e.highlight ? 'style="background:var(--navy-mid);border:1px solid var(--orange);"' : ''; return '<div class="event-item" data-m="' + esc(e.month) + '" data-d="' + esc(e.day) + '"><div class="event-date-block" ' + hl + '><div class="event-month">' + e.month + '</div><div class="event-day">' + e.day + '</div></div><div><div class="event-name">' + e.name + '</div><div class="event-type">' + e.type + '</div></div></div>'; }).join(''); }
 
   const D = st.duration, B = JSON.stringify(ba), T = JSON.stringify(st.tickerItems);
 
@@ -285,6 +285,8 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     'var D=' + D + ',B=' + B + ',T=' + T + ';',
     'function ck(){var n=new Date(),h=n.getHours(),m=n.getMinutes(),a=h>=12?"PM":"AM";h=h%12||12;document.getElementById("clock").textContent=h+":"+(m<10?"0":"")+m+" "+a;}',
     'ck();setInterval(ck,10000);',
+    'function hideOldEvents(){var M="janfebmaraprmayjunjulaugsepoctnovdec",n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate()),els=document.querySelectorAll(".event-item[data-m]");for(var i=0;i<els.length;i++){var mi=M.indexOf(els[i].getAttribute("data-m").slice(0,3).toLowerCase()),d=parseInt(els[i].getAttribute("data-d"),10);if(mi<0||mi%3!==0||!d)continue;mi=mi/3;var c=new Date(n.getFullYear(),mi,d);if(t-c>20736000000)c=new Date(n.getFullYear()+1,mi,d);els[i].style.display=c<t?"none":"";}}',
+    'hideOldEvents();setInterval(hideOldEvents,600000);',
     'var TODAY_ABBR=["sun","mon","tue","wed","thu","fri","sat"][new Date().getDay()];',
     'function ttm(t,a){var p=String(t||"").split(":"),h=parseInt(p[0],10)||0,m=parseInt(p[1],10)||0;if(a==="PM"&&h!==12)h+=12;if(a==="AM"&&h===12)h=0;return h*60+m;}',
     'function parseCsvLine(line){var res=[],cur="",inQ=false;for(var i=0;i<line.length;i++){var c=line[i];if(c==="\\""&&!inQ){inQ=true;}else if(c==="\\""&&inQ){inQ=false;}else if(c===","&&!inQ){res.push(cur.trim());cur="";}else{cur+=c;}}res.push(cur.trim());return res;}',
@@ -327,6 +329,43 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     '\x3c/script>',
     '</body></html>'
   ].join('\n');
+}
+// ── LIVE SYNC (v2) ─────────────────────────────────────────────────────────
+var liveSha = null;
+function liveRepo() { return (document.getElementById('ghRepo').value.trim()) || 'mastercosmo/tcn-display'; }
+function liveTok()  { return document.getElementById('ghToken').value.trim(); }
+async function fetchLiveSha() {
+  const r = await fetch('https://api.github.com/repos/' + liveRepo() + '/contents/data.json?t=' + Date.now(), { headers: { 'Authorization': 'Bearer ' + liveTok(), 'Accept': 'application/vnd.github+json' }, cache: 'no-store' });
+  if (r.status === 404) return 'none';
+  if (!r.ok) throw new Error('GitHub ' + r.status);
+  return (await r.json()).sha;
+}
+function applyLiveData(d) {
+  slides = (d.slides || []).map(function(s){ if (!s.id) s.id = uid(); return s; });
+  events = d.events || []; bannerAds = d.bannerAds || [];
+  const st = d.settings || {};
+  document.getElementById('sDuration').value = Math.round((st.duration || 9000) / 1000);
+  document.getElementById('sLocation').value = st.location || '';
+  document.getElementById('sTicker').value = (st.tickerItems || []).join('\n');
+  const hm = document.getElementById('sHeaderMsg');
+  if (hm) { hm.value = st.headerMsg || ''; updateHeaderMsg(hm.value); localStorage.setItem('tcn_header_msg', hm.value); }
+  activeId = slides.length ? slides[0].id : null;
+  renderList();
+  if (activeId) selectSlide(activeId);
+  else { document.getElementById('emptyState').style.display = 'flex'; document.getElementById('editorContent').style.display = 'none'; }
+}
+async function loadFromLive(silent) {
+  if (!liveTok()) { if (!silent) toast('Enter your GitHub token under Publish to Web first', 'var(--red)'); return false; }
+  if (!silent && !confirm('Replace everything in this editor with the live published display?')) return false;
+  try {
+    const r = await fetch('https://api.github.com/repos/' + liveRepo() + '/contents/data.json?t=' + Date.now(), { headers: { 'Authorization': 'Bearer ' + liveTok(), 'Accept': 'application/vnd.github.raw+json' }, cache: 'no-store' });
+    if (!r.ok) throw new Error('GitHub ' + r.status);
+    const d = JSON.parse(await r.text());
+    liveSha = await fetchLiveSha();
+    applyLiveData(d);
+    toast('Loaded live display (' + slides.length + ' slides)');
+    return true;
+  } catch(e) { toast('Load failed: ' + e.message, 'var(--red)'); return false; }
 }
 
 // ───────────────────────── state ─────────────────────────
