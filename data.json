@@ -44,7 +44,7 @@
       "url": "https://fina.ninja/events/",
       "customDuration": 30,
       "reloadSec": "0",
-      "pin": true
+      "pin": false
     }
   ],
   "events": [
