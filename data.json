@@ -40,8 +40,8 @@
     {
       "id": "_ep102mk",
       "type": "web",
-      "label": "FINA Results",
-      "url": "https://www.youtube.com/",
+      "label": "FINA Results 1",
+      "url": "https://fina.ninja/events/",
       "customDuration": 30,
       "reloadSec": "0",
       "pin": true
