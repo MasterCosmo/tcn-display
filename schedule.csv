@@ -9,8 +9,8 @@ time,ampm,endTime,endAmpm,name,status,statusText,days
 6:00,PM,8:00,PM,Comp Team,open,Spots available,tue
 6:00,PM,6:55,PM,Class,full,Full class,wed|thu
 7:00,PM,7:55,PM,Class,low,limited spots remain,wed|thu
-8:30,AM,10:00,AM,7U and Fun Run,,,sat
-10:00,AM,12:30,PM,9U,,,sat
-12:30,PM,3:00,PM,11U,,,sat
-3:00,PM,6:00,PM,13U,,,sat
+8:00,AM,10:00,AM,7U and Fun Run,,,sat
+10:00,AM,01:00,PM,9U,,,sat
+01:00,PM,4:00,PM,11U,,,sat
+4:00,PM,6:00,PM,13U,,,sat
 6:00,PM,8:30,PM,Young Adult/Adult/Masters/Elite,,,sat
