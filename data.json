@@ -41,10 +41,10 @@
       "id": "_ep102mk",
       "type": "web",
       "label": "FINA Results 1",
-      "url": "https://fina.ninja/events/",
+      "url": "https://timing.ninjaworks.com/competition/12867/leaderboard/monitor/",
       "customDuration": 30,
       "reloadSec": "0",
-      "pin": false
+      "pin": true
     }
   ],
   "events": [
