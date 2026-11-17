@@ -196,6 +196,17 @@ function buildDisplayForPublish(payload, css, logoSrc) {
         +'</div>';
     }
 
+    if (s.type === 'web') {
+      const wUrl = /^https?:\/\//i.test(String(s.url || '').trim()) ? String(s.url).trim() : '';
+      if (!wUrl) return '<div class="slide slide-news"><div class="news-eyebrow">Web Page</div><div class="news-headline">NO LINK<br>SET</div></div>';
+      const wDur = String((parseInt(s.customDuration, 10) || 30) * 1000);
+      const wRel = parseInt(s.reloadSec, 10) || 0;
+      return '<div class="slide slide-web" data-dur="' + wDur + '"' + (s.pin ? ' data-pin="1"' : '') + ' style="position:relative;background:#fff;">'
+        + '<iframe src="' + esc(wUrl) + '"' + (wRel > 0 ? ' data-reload="' + wRel + '"' : '') + ' style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:#fff;" allow="autoplay; fullscreen"></iframe>'
+        + (s.label ? '<div class="slide-fb-label">' + esc(s.label) + '</div>' : '')
+        + '</div>';
+    }
+
     if (s.type === 'highlight') {
       const photo = s.photo ? '<img src="' + s.photo + '" style="width:100%;height:100%;object-fit:cover;object-position:top center;">' : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#1a1a2e;font-size:8rem;">&#129399;</div>';
       const qr = s.qrCode ? '<img src="' + s.qrCode + '" style="width:160px;height:160px;object-fit:contain;border-radius:8px;background:#fff;padding:6px;flex-shrink:0;">' : '<div style="width:160px;height:160px;background:rgba(255,255,255,.15);border:2px dashed rgba(255,255,255,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:rgba(255,255,255,.5);text-align:center;padding:8px;flex-shrink:0;">QR Code</div>';
@@ -306,6 +317,8 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     'requestAnimationFrame(loop);}',
     'requestAnimationFrame(loop);});',
     '})();',
+    '(function(){var p=document.querySelectorAll(".slide[data-pin]");if(p.length){var a=document.querySelectorAll(".slide");for(var i=0;i<a.length;i++){if(!a[i].hasAttribute("data-pin")){a[i].parentNode.removeChild(a[i]);}}}})();',
+    '(function(){var f=document.querySelectorAll("iframe[data-reload]");for(var i=0;i<f.length;i++){(function(fr){var n=parseInt(fr.getAttribute("data-reload"),10);if(n>0){setInterval(function(){var u=fr.getAttribute("src");fr.setAttribute("src","about:blank");setTimeout(function(){fr.setAttribute("src",u);},100);},n*1000);}})(f[i]);}})();',
     'var sl=document.querySelectorAll(".slide"),de=document.getElementById("slideDots"),pb=document.getElementById("progressBar"),cur=0;',
     'sl.forEach(function(_,i){var d=document.createElement("div");d.className="dot"+(i===0?" active":"");de.appendChild(d);});',
     'function gTo(i){sl[cur].classList.remove("active");de.children[cur].classList.remove("active");cur=i%sl.length;sl[cur].classList.add("active");de.children[cur].classList.add("active");sP();}',
@@ -313,7 +326,7 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     'if(sl.length){sl[0].classList.add("active");}sP();',
     'function getDur(i){var d=sl[i]&&sl[i].getAttribute("data-dur");return d?parseInt(d,10):D;}',
     'function tick(){setTimeout(function(){gTo((cur+1)%sl.length);sP();tick();},getDur(cur));}',
-    'tick();',
+    'if(sl.length>1){tick();}else{pb.style.display="none";de.style.display="none";}',
     'var bi=0,ba=document.getElementById("bannerAd");',
     'function shB(a){ba.querySelector(".ad-biz").textContent=a.biz;ba.querySelector(".ad-tagline").textContent=a.tagline;ba.classList.add("visible");}',
     'function rB(){ba.classList.remove("visible");setTimeout(function(){bi=(bi+1)%B.length;shB(B[bi]);},420);}',
@@ -583,7 +596,8 @@ var TYPES = {
   ad:          {label:'Ad / Sponsor',emoji:'💼', name:'Ad / Sponsor Slide'},
   highlight:   {label:'Ninja Highlight', emoji:'⭐', name:'Ninja Highlight'},
   youtube:     {label:'YouTube / Live', emoji:'📺', name:'YouTube / Live Stream'},
-  facebook:    {label:'Facebook Video', emoji:'📘', name:'Facebook Video / Live'}
+  facebook:    {label:'Facebook Video', emoji:'📘', name:'Facebook Video / Live'},
+  web:         {label:'Web Page / Scores', emoji:'🌐', name:'Web Page / Live Scores'}
 };
 var DEFAULTS = {
   news:        function(){ return {type:'news',eyebrow:'Gym Update',headline:'SLIDE\nHEADLINE',accentWord:'HEADLINE',body:'Enter your message here.',chip:'Date or detail here'}; },
@@ -592,7 +606,8 @@ var DEFAULTS = {
   ad:          function(){ return {type:'ad',tag:'Community Partner',businessName:'Business Name',message:'Your message to TCN families',cta:'Mention TCN for a special offer',logoImage:''}; },
   highlight:   function(){ return {type:'highlight',name:'Ninja Name',age:'',obstacle:'',quote:'',photo:''}; },
   youtube:     function(){ return {type:'youtube',label:'Now Playing',videoId:'',autoplay:true,mute:true,showLabel:true,isLive:false}; },
-  facebook:    function(){ return {type:'facebook',url:'',label:'',customDuration:30}; }
+  facebook:    function(){ return {type:'facebook',url:'',label:'',customDuration:30}; },
+  web:         function(){ return {type:'web',label:'',url:'',customDuration:30,reloadSec:30,pin:false}; }
 };
 function slideTitle(s){
   return s.businessName || s.title || (s.headline || '').split('\n')[0] || s.name || s.label || s.videoId || s.url || 'Untitled';
@@ -605,11 +620,12 @@ function idx(id){ for (var i = 0; i < slides.length; i++) if (slides[i].id === i
 function renderSlides(){
   var v = $('#v-slides'); v.innerHTML = '';
   v.appendChild(h('div', {class:'sect', text: slides.length + ' slide' + (slides.length === 1 ? '' : 's') + ' · plays top to bottom'}));
+  if (slides.some(function(x){ return x.pin; })) v.appendChild(h('div', {class:'note', style:'border-color:var(--orange);color:var(--cream)', text:'📌 Pinned mode: the TV will show ONLY the pinned slides after you publish. Turn pin off to resume normal cycling.'}));
   slides.forEach(function(s, i){
     var t = TYPES[s.type] || {label:s.type};
     v.appendChild(h('div', {class:'card slide-row'},
       h('div', {class:'main', onclick:function(){ openEditor(s.id); }},
-        h('span', {class:'badge', text:t.label}),
+        h('span', {class:'badge', text:t.label + (s.pin ? ' · 📌 PINNED' : '')}),
         h('div', {class:'t', text:slideTitle(s)}),
         h('div', {class:'s', text:slideSub(s).replace(/\n/g, ' ')})),
       h('div', {class:'acts'},
@@ -704,6 +720,15 @@ function buildFields(s, b){
     opts.appendChild(textField(s, 'label', 'Badge label', {def:'Now Playing'}));
     opts.appendChild(checkField(s, 'isLive', 'Show pulsing red LIVE dot'));
     add(opts);
+  } else if (s.type === 'web'){
+    add(textField(s, 'url', 'Page link (https://…)', {ph:'https://timing.ninjaworks.com/embed/…', type:'url', hint:'Shown inside the slide area; header, clock, schedule and sidebar stay on screen.'}));
+    add(textField(s, 'label', 'Label (optional, shown on TV)', {ph:'e.g. Run Order'}));
+    add(textField(s, 'customDuration', 'Slide duration (seconds)', {type:'number', inputmode:'numeric', def:30, hint:'Used when cycling with other slides. Ignored while pinned.'}));
+    add(textField(s, 'reloadSec', 'Auto-reload every (seconds, 0 = never)', {type:'number', inputmode:'numeric', def:30, hint:'Keeps leaderboards current. The page blanks briefly while reloading.'}));
+    var pinBox = h('div', {class:'note'});
+    pinBox.appendChild(checkField(s, 'pin', '📌  Pin this page (stop cycling)'));
+    pinBox.appendChild(h('div', {text:'When on, the TV shows ONLY pinned slides. One pinned page stays up with no rotation. Pin two (run order + leaderboard) and the TV alternates between just those. Turn off and publish to go back to normal.'}));
+    add(pinBox);
   } else if (s.type === 'facebook'){
     add(textField(s, 'url', 'Facebook video URL', {ph:'https://www.facebook.com/video/...', type:'url'}));
     add(textField(s, 'label', 'Label (shown on TV)', {ph:'e.g. Coach Mike streaming live'}));
