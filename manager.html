@@ -177,7 +177,7 @@ function buildDisplayForPublish(payload, css, logoSrc) {
     }
 
     if (s.type === 'achievement') {
-      const inner = '<span class="rings-float">\uD83C\uDFC5</span><div class="wof-tag">' + (s.tag||'Wall of Fame') + '</div><div class="athlete-name">' + (s.title||'') + '</div><div class="achievement-feat">' + (s.subtitle||'') + '</div><div class="sign-wall-btn">&#9889; Sign the Wall</div>';
+      const inner = '<span class="rings-float">\uD83C\uDFC5</span><div class="wof-tag">' + (s.tag||'Wall of Fame') + '</div><div class="athlete-name">' + (s.title||'') + '</div><div class="achievement-feat">' + (s.subtitle||'') + '</div><div class="sign-wall-btn">&#9889; ' + esc(s.cta || 'Sign the Wall') + '</div>';
       return withImgP('slide-achievement', inner);
     }
     if (s.type === 'record') {
